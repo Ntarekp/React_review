@@ -19,8 +19,8 @@ const content = [
 ];
 
 const btnWhyReact = document.getElementById("btn-why-react")
-const btncoreFeatures = document.getElementById("core-features")
-const btnrelatedResouces = document.getElementById("related-resouces")
+const btncoreFeatures = document.getElementById("btn-core-features")
+const btnrelatedResouces = document.getElementById("btn-related-resources")
 const tabContent = document.getElementById("tab-contents")
 
 function displayContent(items){
@@ -33,3 +33,29 @@ function displayContent(items){
     list.innerHTML = listContent;
     tabContent.append(list);
 }
+
+function highlightButton(btn){
+    //clear all existing styling/highlights
+    btnWhyReact.className ="";
+    btncoreFeatures.className= "";
+    btnrelatedResouces.className= "";
+    btn.className= "active"//then set the new style/hightligt to active
+}
+function handleClick(event){
+    const btnId = event.target.id;
+    highlightButton(event.target);
+    if(btnId ==="btn-why-react"){
+        displayContent(content[0])
+    }
+    else if(btnId=== "btn-core-features"){
+        displayContent(content[1])
+    }
+    else{
+        displayContent(content[2])
+    }
+}
+displayContent(content[0])
+
+btnWhyReact.addEventListener("click", handleClick);
+btncoreFeatures.addEventListener("click",handleClick);
+btnrelatedResouces.addEventListener("click", handleClick)
