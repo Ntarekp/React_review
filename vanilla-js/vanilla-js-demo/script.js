@@ -17,3 +17,19 @@ const content = [
         "React Native (build native mobile apps with React)"
     ]
 ];
+
+const btnWhyReact = document.getElementById("btn-why-react")
+const btncoreFeatures = document.getElementById("core-features")
+const btnrelatedResouces = document.getElementById("related-resouces")
+const tabContent = document.getElementById("tab-contents")
+
+function displayContent(items){
+    let listContent ="";
+    for(const item of items){
+        listContent += `<li>${item}</li>`
+    }
+    const list = document.createElement("ul");
+    tabContent.innerHTML = "";
+    list.innerHTML = listContent;
+    tabContent.append(list);
+}
