@@ -54,13 +54,13 @@ header p{
   background-color: #f3e248;
   color: #273133;
 }
-#tab-content {
-  background-color: #2d3942;
+#tab-contents {
+  background-color: #252f36;
   border-radius: 0 4px 4px 4px;
   padding: 1rem;
 }
 
-#tab-content li {
-  margin: 0.75rem 0;
+#tab-contents li {
+  margin: 0.75rem 0 0 0.75rem;
 }
 
