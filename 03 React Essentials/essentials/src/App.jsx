@@ -1,10 +1,17 @@
+import reactImg from './assets/react.svg';
+const reactDescriptions = ["Fundamental", "Crucial","Core"]
+
+function genRandomInt(max){
+  return Math.floor(Math.random()*(max +1));
+}
 function Header() {
+  const description = reactDescriptions[genRandomInt(2)]
   return (
     <header>
-      <img src="#images" alt="image" />
+      <img src={reactImg} alt="image" />
       <h1>React Essentials</h1>
       <p>
-        Fundamental React concepts you will need for almost any app you are going to build
+      {description}   React concepts you will need for almost any app you are going to build
       </p>
     </header>
   )
