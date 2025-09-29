@@ -10,7 +10,8 @@ function Header(){
   )
 }
 
-function App(){
+
+function Body(){
   return (
     <div>
       
