@@ -5,11 +5,11 @@ import TabButton from './components/TabButton';
 
 
 function App() {
-
+  let tabContent = 'Please Click a button'
   function handlSelect(selectedButton) {
     //Selected Button ==> 'Component', 'jsx', 'props','state'
-    console.log(selectedButton)
-
+    tabContent = selectedButton;
+    console.log(tabContent )
   }
 
   return (
@@ -35,15 +35,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={()=>handlSelect('Components')}> Components</TabButton >
-            <TabButton onSelect={()=>handlSelect('JSX')}> JSX</TabButton >
-            <TabButton onSelect={()=>handlSelect('props')}> Props</TabButton >
-            <TabButton onSelect={()=>handlSelect('State')}> State</TabButton >
+            <TabButton onSelect={() => handlSelect('Components')}> Components</TabButton >
+            <TabButton onSelect={() => handlSelect('JSX')}> JSX</TabButton >
+            <TabButton onSelect={() => handlSelect('props')}> Props</TabButton >
+            <TabButton onSelect={() => handlSelect('State')}> State</TabButton >
           </menu>
 
         </section>
-        Dynamic Content
-
+        {tabContent}
       </main>
     </div>
   )
