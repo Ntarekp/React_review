@@ -26,7 +26,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton> Components</TabButton >
+            <TabButton label='Components'> Components</TabButton >
           </menu>
 
         </section>
