@@ -2,7 +2,14 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header';
 import CoreConcept from './components/CoreConcept'
 import TabButton from './components/TabButton';
+
+
 function App() {
+
+  function handlSelect() {
+    console.log("Hello World!-selected from main app")
+  }
+
   return (
     <div>
       <Header />
@@ -26,7 +33,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton label='Components'> Components</TabButton >
+            <TabButton onSelect={handlSelect}> Components</TabButton >
+            <TabButton onSelect={handlSelect}> JSX</TabButton >
+            <TabButton onSelect={handlSelect}> Props</TabButton >
+            <TabButton onSelect={handlSelect}> State</TabButton >
           </menu>
 
         </section>
