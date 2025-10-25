@@ -3,22 +3,17 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header/Header';
 import CoreConcept from './components/CoreConcept'
 import TabButton from './components/TabButton';
+import { Examples } from './data.js';
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handlSelect(selectedButton) {
     //Selected Button ==> 'Component', 'jsx', 'props','state'
-setSelectedTopic(selectedButton)
-    console.log(selectedButton)
+    setSelectedTopic(selectedButton)
+    // console.log(selectedButton)
   }
-
-  const tabContent = (
-    <div className="tab-content">
-      <p>{selectedTopic}</p>
-    </div>
-  )
 
   return (
     <div>
@@ -48,9 +43,21 @@ setSelectedTopic(selectedButton)
             <TabButton onSelect={() => handlSelect('props')}> Props</TabButton >
             <TabButton onSelect={() => handlSelect('State')}> State</TabButton >
           </menu>
+          {!selectedTopic ? <p> Please select a topic</p> :<div id="tab-content">
+            <h3>
+              {Examples[selectedTopic].title}
+            </h3>
+            <p>
+              {Examples[selectedTopic].description}
+            </p>
+            <pre>
+              <code>
+                {Examples[selectedTopic].code}
+              </code>
+            </pre>
+          </div> }
 
         </section>
-        {tabContent}
       </main>
     </div>
   )
