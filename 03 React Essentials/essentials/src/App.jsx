@@ -38,12 +38,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handlSelect('Components')}> Components</TabButton >
-            <TabButton onSelect={() => handlSelect('JSX')}> JSX</TabButton >
-            <TabButton onSelect={() => handlSelect('props')}> Props</TabButton >
-            <TabButton onSelect={() => handlSelect('State')}> State</TabButton >
+            <TabButton
+              isSelected={selectedTopic === 'Components'}
+              onSelect={() => handlSelect('Components')}> Components</TabButton >
+            <TabButton
+              isSelected={selectedTopic === 'JSX'}
+              onSelect={() => handlSelect('JSX')}> JSX</TabButton >
+            <TabButton
+              isSelected={selectedTopic === 'props'}
+              onSelect={() => handlSelect('props')}> Props</TabButton >
+            <TabButton
+              isSelected={selectedTopic === 'State'}
+              onSelect={() => handlSelect('State')}> State</TabButton >
           </menu>
-          {!selectedTopic ? <p> Please select a topic</p> :<div id="tab-content">
+          {!selectedTopic ? <p> Please select a topic</p> : <div id="tab-content">
             <h3>
               {Examples[selectedTopic].title}
             </h3>
@@ -55,7 +63,7 @@ function App() {
                 {Examples[selectedTopic].code}
               </code>
             </pre>
-          </div> }
+          </div>}
 
         </section>
       </main>
